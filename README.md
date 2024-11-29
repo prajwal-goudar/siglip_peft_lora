@@ -15,7 +15,7 @@ This project provides a script for training a Parameter-Efficient Fine-Tuning (P
 
 Important: Make sure that your parquet file has images and labels, images should be stored as bytes and should be named as image and labels should be named as label. You can add the meta data using --extra features argument.
 
-`python train.py --parquet_file path/to/your/data.parquet --extra_features feature1 feature2 --num_epochs 10 --batch_size 16`
+`python run_peft.py --parquet_file path/to/your/data.parquet --extra_features feature1 feature2 --num_epochs 10 --batch_size 16`
 
 Please note: You can also run `python run_peft.py --help` to check the supported arguments.
 

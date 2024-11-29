@@ -20,6 +20,104 @@ from sklearn.model_selection import train_test_split
 import argparse
 
 
+# Citation:
+# This script uses the features from the packages which are cited below:
+# 
+# Pytorch:
+# @article{paszke2017automatic,
+#   title={Automatic differentiation in PyTorch},
+#   author={Paszke, Adam and Gross, Sam and Chintala, Soumith and Chanan, Gregory and Yang, Edward and DeVito, Zachary and Lin, Zeming and Desmaison, Alban and Antiga, Luca and Lerer, Adam},
+#   year={2017}
+# }
+# 
+# Tensorflow:
+# @misc{tensorflow2015-whitepaper,
+# title={ {TensorFlow}: Large-Scale Machine Learning on Heterogeneous Systems},
+# url={https://www.tensorflow.org/},
+# note={Software available from tensorflow.org},
+# author={
+#     Mart\'{i}n~Abadi and
+#     Ashish~Agarwal and
+#     Paul~Barham and
+#     Eugene~Brevdo and
+#     Zhifeng~Chen and
+#     Craig~Citro and
+#     Greg~S.~Corrado and
+#     Andy~Davis and
+#     Jeffrey~Dean and
+#     Matthieu~Devin and
+#     Sanjay~Ghemawat and
+#     Ian~Goodfellow and
+#     Andrew~Harp and
+#     Geoffrey~Irving and
+#     Michael~Isard and
+#     Yangqing Jia and
+#     Rafal~Jozefowicz and
+#     Lukasz~Kaiser and
+#     Manjunath~Kudlur and
+#     Josh~Levenberg and
+#     Dandelion~Man\'{e} and
+#     Rajat~Monga and
+#     Sherry~Moore and
+#     Derek~Murray and
+#     Chris~Olah and
+#     Mike~Schuster and
+#     Jonathon~Shlens and
+#     Benoit~Steiner and
+#     Ilya~Sutskever and
+#     Kunal~Talwar and
+#     Paul~Tucker and
+#     Vincent~Vanhoucke and
+#     Vijay~Vasudevan and
+#     Fernanda~Vi\'{e}gas and
+#     Oriol~Vinyals and
+#     Pete~Warden and
+#     Martin~Wattenberg and
+#     Martin~Wicke and
+#     Yuan~Yu and
+#     Xiaoqiang~Zheng},
+#   year={2015},
+# }
+
+# Hugging Face: https://huggingface.co/docs/hub/peft
+
+#  Pandas:
+
+# @software{
+#         reback2020pandas,
+#         author       = {The pandas development team},
+#         title        = {pandas-dev/pandas: Pandas},
+#         month        = feb,
+#         year         = 2020,
+#         publisher    = {Zenodo},
+#         version      = {latest},
+#         doi          = {10.5281/zenodo.3509134},
+#         url          = {https://doi.org/10.5281/zenodo.3509134}
+#     }
+
+# Pytorch:
+
+# @inproceedings{paszke2017automatic,
+#   title={Automatic differentiation in PyTorch},
+#   author={Paszke, Adam and Gross, Sam and Chintala, Soumith and Chanan, Gregory and Yang, Edward and DeVito, Zachary and Lin, Zeming and Desmaison, Alban and Antiga, Luca and Lerer, Adam},
+#   booktitle={NIPS-W},
+#   year={2017}
+# }
+
+# Sklearn:
+
+# @article{scikit-learn,
+#   title={Scikit-learn: Machine Learning in {P}ython},
+#   author={Pedregosa, F. and Varoquaux, G. and Gramfort, A. and Michel, V.
+#           and Thirion, B. and Grisel, O. and Blondel, M. and Prettenhofer, P.
+#           and Weiss, R. and Dubourg, V. and Vanderplas, J. and Passos, A. and
+#           Cournapeau, D. and Brucher, M. and Perrot, M. and Duchesnay, E.},
+#   journal={Journal of Machine Learning Research},
+#   volume={12},
+#   pages={2825--2830},
+#   year={2011}
+# }
+
 # Argument parser
 parser = argparse.ArgumentParser(description='Run PEFT model training on Google Siglip Model which is currently used in df-analyze to generate embeddings')
 parser.add_argument('--parquet_file', type=str, required=True, help='Path to the parquet file, the paquet file should be made up of images in byte format named as image, label i.e. the target variable should be named as label and other extra features (metadata) that you want to include')
