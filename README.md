@@ -32,3 +32,15 @@ This should show a tensor dashboard like below
 ![Alt text](./tensor_board.png)
 
 
+## Generating Embeddings
+
+Run this script to generate embeddings and create a Parquet file. Make sure that you use the same value for `test_size` as the one that was used in generating the PEFT model, as the embedding will be generated on the test data.
+
+`python perform-embedding.py --model_path trained_model.pth --parquet_file images_all_required_features.parquet --test_size 0.2 --batch_size 16 --extra_features feature1 feature2 feature3`
+
+--model_path: Path to your pre-trained model file.
+--parquet_file: Path to the Parquet file containing image features.
+--test_size: The proportion of data to be used for testing. Ensure consistency with the value used during PEFT model generation.
+--batch_size: Number of samples per batch for processing.
+--extra_features: Extra features other than label and image.
+
