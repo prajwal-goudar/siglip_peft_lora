@@ -176,8 +176,8 @@ model = AutoModelForImageClassification.from_pretrained(model_name)
 # Apply LoRA
 # Please note: If you find better configuration please feel free to use them here.
 config = LoraConfig(
-    r=8,
-    lora_alpha=16,
+    r=16,
+    lora_alpha=32,
     lora_dropout=0.1,
     target_modules=['q_proj', 'v_proj'],
     inference_mode=False
